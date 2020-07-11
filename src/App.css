@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono&family=Poppins:wght@500&display=swap");
 *,
 html {
   margin: 0;
@@ -16,11 +16,12 @@ html {
 .App .left {
   width: calc(50% - 0px);
   height: 100vh;
+  background: #f5f5f5;
 }
 
 .App .right {
   background: #741fea;
   width: calc(50% + 50px);
-  border-left: 100px solid #ffffff;
+  border-left: 100px solid #f5f5f5;
   border-bottom: 660px solid transparent;
 }
