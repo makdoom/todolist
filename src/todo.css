@@ -1,13 +1,36 @@
+/* SCROLL BAT CUSTOMIZATION */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #dfdfdf;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* MAIN COMPONENT */
 .todo {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: 400px;
-  width: 310px;
+  height: 450px;
+  width: 330px;
   padding: 1.4rem;
   background: #fff;
-  /* box-shadow: 0 8px 6px/ -6px rgba(0, 0, 0, 0.7); */
   box-shadow: 0 7px 20px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
 }
@@ -42,6 +65,7 @@
 .input-field input {
   padding: 5px 3px;
   border-radius: 30px;
+  width: 200px;
   text-align: center;
   border: 1px solid #ccc;
   font-size: 0.9rem;
@@ -51,16 +75,64 @@
 }
 
 .input-field .add-btn {
-  padding: 5px 15px;
+  padding: 5px 25px;
   border-radius: 50px;
-  text-decoration: none;
+  outline: none;
+  border: 2px solid #741fea;
   text-transform: uppercase;
   font-weight: bold;
-  color: #fff;
-  background: #741fea;
-  transition: 0.4s;
+  color: #741fea;
+  background: transparent;
+  transition: 0.3s ease-in;
+  cursor: pointer;
 }
 
-.input-field .add-btn:hover {
+.input-field .add-btn:hover,
+.clear-btn:hover {
   background: #4a03ad;
+  color: #fff;
+}
+
+.list-items {
+  margin-top: 20px;
+  height: 270px;
+  overflow: auto;
+  border: 1px solid #dfdfdf;
+}
+
+.list-items .item {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 8px;
+  list-style: none;
+  padding: 10px 8px;
+  border-radius: 30px;
+  background: #741fea;
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.clear-btn {
+  width: 40%;
+  margin: 7px 30% 0 30%;
+  margin-left: 30%;
+  margin-right: 30%;
+  padding: 4px 0px;
+  border-radius: 30px;
+  border: 2px solid #741fea;
+  background: transparent;
+  text-transform: uppercase;
+  color: #741fea;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: 0.3s ease-in;
+  outline: none;
+}
+
+.delete-btn {
+  text-align: center;
+  margin: 2px 5px;
+  cursor: pointer;
 }

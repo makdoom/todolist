@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./todo.css";
 
 const Todo = () => {
+  const [inputText, setInputText] = useState("");
+  const [taskList, setTaskList] = useState([]);
+
   const handleInput = (e) => {
-    console.log(e.target.value);
+    setInputText(e.target.value);
   };
+
+  // To Add Item into the list
+  const addItem = () => {
+    setTaskList([...taskList, inputText]);
+    setInputText("");
+    console.log(taskList);
+  };
+
   return (
     <div>
       <div className="todo">
@@ -12,16 +23,25 @@ const Todo = () => {
           Todo <span>List</span> App
         </h2>
         <div className="input-field">
-          <input type="text" placeholder="Add Task" onChange={handleInput} />
-          <a href="#" className="add-btn">
+          <input
+            value={inputText}
+            type="text"
+            placeholder="Add Task"
+            onChange={handleInput}
+          />
+          <button onClick={addItem} className="add-btn">
             Add
-          </a>
+          </button>
         </div>
         <div className="list-items">
-          <li className="item">Reading Books </li>
-          <li className="item">Reading Books</li>
-          <li className="item">Reading Books</li>
+          {taskList.map((task, index) => (
+            <li className="item" key={index}>
+              {task}
+              <i className="delete-btn fas fa-trash-alt"></i>
+            </li>
+          ))}
         </div>
+        <button className="clear-btn">clear Tasks</button>
       </div>
     </div>
   );

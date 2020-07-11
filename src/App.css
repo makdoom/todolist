@@ -9,9 +9,6 @@ html {
   /* overflow-y: hidden; */
 }
 
-body {
-  overflow-y: hidden;
-}
 .App {
   display: flex;
 }
@@ -22,8 +19,8 @@ body {
 }
 
 .App .right {
-  background: #c6abeb;
+  background: #741fea;
   width: calc(50% + 50px);
   border-left: 100px solid #ffffff;
-  border-bottom: 665px solid transparent;
+  border-bottom: 660px solid transparent;
 }
